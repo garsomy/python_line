@@ -1,0 +1,148 @@
+#1
+line = str(input('¬ведите строку'))
+print('1 - 3-ий символ:',line[2])
+#2
+print('2 - предпоследний символ:',line[-2])
+#3
+print('3 - первые 5 символов',line[:5])
+#4
+print('4 - вс€ строка, кроме 2 последних символов',line[:-2])
+#5
+print('5 - все символы с четными индексами',line[1::2])
+#6
+print('6 - все символы с нечетными индексами',line[::2])
+#7
+print('7 - все символы в обратном пор€дке',line[::-1])
+#8
+line_revers = line[::-1]
+print('8 - все символы строки через один в обратном пор€дке',line_revers[::2])
+#9
+print('9 - длина данной строки',len(line))
+
+
+
+#10
+line = str(input('¬ведите строку'))
+print('10 - кол-во строк',line.count(' ') + 1)
+#11
+line = str(input('¬ведите строку'))
+line_length = (len(line) + 1) // 2
+print(line[line_length:] + line[:line_length])
+#12
+line = str(input('¬ведите строку:'))
+
+first_index = line.find("f")
+last_index = line.rfind("f")
+
+if first_index == last_index:
+    print('»ндекс буквы f:', first_index)
+else:
+    print('ѕерва€ f:', first_index)
+    print('ѕоследн€€ f:', last_index)
+
+
+
+#13
+line = str(input('¬ведите строку в которой минимум 2 h'))
+first_index = line.find('h')
+last_index = line.rfind('h')
+
+print(line[:first_index] + line[last_index+1:])
+#14
+line = str(input('¬ведите строку c 1'))
+print(line.replace("1", "one"))
+#15
+line = str(input('¬ведите строку'))
+print(line.replace('@',''))
+#16
+line = str(input('¬ведите строку с нескольками h'))
+
+first_index = line.find("h")
+last_index = line.rfind("h")
+
+print(line[:first_index+1] + line[first_index+1:last_index].replace("h", "H") + line[last_index:])
+
+
+
+#17
+num1 = int(input('¬ведите первое число'))
+num2 = int(input('¬ведите второе число'))
+
+if num1 > num2:
+    print('ѕервое число больше второго')
+elif num1 < num2:
+    print('¬торое число больше первого')
+elif num1 == num2:
+    print('„исла равны')
+else:
+    print('ќшибка, введите корректное число')
+#18
+x = int(input('¬ведите x'))
+
+if x > 0:
+    print('sign (x) = 1')
+elif x < 0:
+    print('sign(x) = -1')
+else:
+    print('sign(x) = 0')
+#19
+x1 = int(input("¬ведите номер столбца первой клетки: "))
+y1 = int(input("¬ведите номер строки первой клетки: "))
+x2 = int(input("¬ведите номер столбца второй клетки: "))
+y2 = int(input("¬ведите номер строки второй клетки: "))
+if 1<=x1<=8 and 1<=x2<=8 and 1<=y1<=8 and 1<=y2<=8:
+    if (x1+y1)%2 == (x2+y2)%2:
+        print('YES')
+    else:
+        print('NO')
+else:
+    print('“акой клетки нет')
+#20
+year = int(input('¬ведите год'))
+
+if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+    print('YES')
+else:
+    print('NO')
+
+
+
+#21
+num1 = int(input('¬ведите первое число'))
+num2 = int(input('¬ведите второе число'))
+num3 = int(input('¬ведите троетье число'))
+
+if num1 == num2 == num3:
+    print('3')
+elif (num1 == num2) or (num1 == num3) or (num2 == num3):
+    print('2')
+else:
+    print('0')
+#22
+x1 = int(input('¬ведите горизонталь'))
+y1 = int(input('¬ведите вертикаль'))
+x2 = int(input('¬ведите горизонталь'))
+y2 = int(input('¬ведите вертикаль'))
+
+if (x1 == x2) or (y1 == y2):
+    print("YES")
+else:
+    print("NO")
+#23
+n = int(input())
+m = int(input())
+k = int(input())
+if (k%n==0 or k%0==m) and k<n*m:
+    print('YES')
+else:
+    print('NO')
+#24
+N = int(input('¬ведите N'))
+M = int(input('¬ведите M'))
+x = int(input('¬ведите x'))
+y = int(input('¬ведите y'))
+
+top = min(abs(0 - x), abs(N - x))
+bottom = min(abs(M - y), abs(0 - y))
+
+print('ћинимальное рассто€ние до бортика', min(top, bottom))
